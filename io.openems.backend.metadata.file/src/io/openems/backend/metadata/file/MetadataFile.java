@@ -87,7 +87,7 @@ public class MetadataFile extends AbstractMetadata implements Metadata, EventHan
 	private static final Role USER_GLOBAL_ROLE = Role.ADMIN;
 	private JsonObject settings = new JsonObject();
 
-	private static Language LANGUAGE = Language.EN;
+	private static Language LANGUAGE = Language.DE;
 
 	private final Logger log = LoggerFactory.getLogger(MetadataFile.class);
 	private final Map<String, MyEdge> edges = new HashMap<>();
@@ -275,7 +275,6 @@ public class MetadataFile extends AbstractMetadata implements Metadata, EventHan
 
 	@Override
 	public void updateUserLanguage(User user, Language locale) throws OpenemsNamedException {
-		this.log.info("updateUserLanguage with language: " + locale.toString())
 		MetadataFile.LANGUAGE = locale;
 	}
 
