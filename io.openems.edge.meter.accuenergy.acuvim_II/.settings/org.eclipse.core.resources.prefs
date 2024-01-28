@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/io/openems/edge/meter/accuenergy/acuvim_II/AccuenergyAccuvimII.java=UTF-8
+encoding//src/io/openems/edge/meter/accuenergy/acuvim_II/AccuenergyAccuvimIIImpl.java=UTF-8
+encoding//src/io/openems/edge/meter/accuenergy/acuvim_II/Config.java=UTF-8
+encoding//test/io/openems/edge/meter/accuenergy/acuvim_II/MeterAccuenergyAcuvimIITest.java=UTF-8
+encoding//test/io/openems/edge/meter/accuenergy/acuvim_II/MyConfig.java=UTF-8
+encoding/<project>=UTF-8
+encoding/bnd.bnd=UTF-8
+encoding/readme.adoc=UTF-8
