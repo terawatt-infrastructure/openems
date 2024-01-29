@@ -17,7 +17,7 @@ import io.openems.edge.bridge.modbus.api.AbstractOpenemsModbusComponent;
 import io.openems.edge.bridge.modbus.api.BridgeModbus;
 import io.openems.edge.bridge.modbus.api.ModbusComponent;
 import io.openems.edge.bridge.modbus.api.ModbusProtocol;
-import io.openems.edge.bridge.modbus.api.element.SignedWordElement;
+import io.openems.edge.bridge.modbus.api.element.FloatDoublewordElement;
 import io.openems.edge.bridge.modbus.api.task.FC3ReadRegistersTask;
 import io.openems.edge.common.channel.Doc;
 import io.openems.edge.common.component.OpenemsComponent;
@@ -69,14 +69,29 @@ public class AccuenergyAccuvimIIImpl extends AbstractOpenemsModbusComponent impl
 
 	@Override
 	protected ModbusProtocol defineModbusProtocol() throws OpenemsException {
+		
 		return new ModbusProtocol(this, //
-				new FC3ReadRegistersTask(1000, Priority.HIGH,
-						m(ElectricityMeter.ChannelId.ACTIVE_POWER, new SignedWordElement(1000))));
+				
+				new FC3ReadRegistersTask(16386, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.VOLTAGE_L1, new FloatDoublewordElement(16386))),
+				new FC3ReadRegistersTask(16388, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.VOLTAGE_L2, new FloatDoublewordElement(16388))),
+				new FC3ReadRegistersTask(16390, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.VOLTAGE_L3, new FloatDoublewordElement(16390))),
+				new FC3ReadRegistersTask(17922, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.CURRENT_L2, new FloatDoublewordElement(17922))),
+				new FC3ReadRegistersTask(17920, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.CURRENT_L1, new FloatDoublewordElement(17920))),
+				new FC3ReadRegistersTask(17924, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.CURRENT_L3, new FloatDoublewordElement(17924))),
+				new FC3ReadRegistersTask(16452, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.REACTIVE_POWER, new FloatDoublewordElement(16452)))
+				);
 	}
 
 	@Override
 	public String debugLog() {
-		return "L:" + this.getActivePower().asString();
+		return "L:" + this.getCurrentL1().asString();
 	}
 
 	@Override
