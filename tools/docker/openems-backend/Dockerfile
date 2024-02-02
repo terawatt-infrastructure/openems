@@ -6,7 +6,7 @@ COPY build/openems-backend.jar ./
 COPY config.d ./config.d
 COPY openems-backend.sh ./
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends software-properties-common curl gpg-agent postgresql
+RUN apt-get install -y --no-install-recommends software-properties-common curl gpg-agent postgresql jq
 RUN curl -sL https://repos.influxdata.com/influxdb.key | apt-key add -
 RUN add-apt-repository -y ppa:openjdk-r/ppa
 
