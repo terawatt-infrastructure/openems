@@ -19,7 +19,6 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
 RUN apt-get update && apt-get install -y openjdk-17-jdk openjdk-17-jre influxdb
 RUN update-alternatives --config java
 RUN update-alternatives --config javac
-RUN chmod 777 ./openems-backend.sh
 USER root
 EXPOSE 8075-8080
 ENTRYPOINT ["/opt/openems-backend/openems-backend.sh"]
