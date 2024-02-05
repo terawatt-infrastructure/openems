@@ -7,7 +7,7 @@ COPY config.d ./config.d
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends software-properties-common curl gpg-agent postgresql jq
 RUN curl -sL https://repos.influxdata.com/influxdb.key | apt-key add -
-RUN add-apt-repository -y ppa:openjdk-r/ppa
+# RUN add-apt-repository -y ppa:openjdk-r/ppa
 
 ENV ODOO_VERSION 15.0
 ENV ODOO_RELEASE latest
