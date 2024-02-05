@@ -68,8 +68,6 @@ public class InitializeEdgesWorker {
 	}
 
 	private void readAllEdgesFromPostgres(Connection con) {
-		this.parent.logInfo(this.log, "readAllEdgesFromPostgres called");
-		this.parent.logInfo(this.log, con.getMetaData().getURL());
 		try (var pst = this.psQueryAllEdges(con); //
 				var rs = pst.executeQuery();) {
 			var counter = 0;
@@ -110,6 +108,8 @@ public class InitializeEdgesWorker {
 	 * @throws SQLException on error
 	 */
 	private PreparedStatement psQueryAllEdges(Connection connection) throws SQLException {
+		this.parent.logInfo(this.log, "psQueryAllEdges called");
+		this.parent.logInfo(this.log, con.getMetaData().getURL());
 		return connection.prepareStatement(//
 				"SELECT " + Field.getSqlQueryFields(EdgeDevice.values()) //
 						+ " FROM " + EdgeDevice.ODOO_TABLE //
