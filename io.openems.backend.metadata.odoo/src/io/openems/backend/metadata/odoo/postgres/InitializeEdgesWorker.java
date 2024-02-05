@@ -68,6 +68,7 @@ public class InitializeEdgesWorker {
 	}
 
 	private void readAllEdgesFromPostgres(Connection con) {
+		this.parent.logInfo(this.log,  con.toString());
 		try (var pst = this.psQueryAllEdges(con); //
 				var rs = pst.executeQuery();) {
 			var counter = 0;
