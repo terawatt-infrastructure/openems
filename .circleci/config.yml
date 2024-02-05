@@ -52,21 +52,24 @@ jobs:
         type: string
         default: "."
     docker:
-      - image: cimg/base:stable
+      - image: cimg/openjdk:17.0.10
     steps:
       - checkout
       - run: |
-          currdir=$(pwd)
-          cd tools/docker/openems-backend
-          ./download-release.sh
-          cd $currdir
-      - devops/build-image:
-          build_args: "<< parameters.build_args >>"
-          dockerfile_path: << parameters.dockerfile_path >>
-          image_repo: << parameters.image_repo >>
-          pipeline_id: << pipeline.id >>
-          pipeline_number: << pipeline.number >>
-          build_path: << parameters.build_path >>
+          ./gradlew buildNeeded
+          ./gradlew buildBackend
+          ls -lah build
+      #     currdir=$(pwd)
+      #     cd tools/docker/openems-backend
+      #     ./download-release.sh
+      #     cd $currdir
+      # - devops/build-image:
+      #     build_args: "<< parameters.build_args >>"
+      #     dockerfile_path: << parameters.dockerfile_path >>
+      #     image_repo: << parameters.image_repo >>
+      #     pipeline_id: << pipeline.id >>
+      #     pipeline_number: << pipeline.number >>
+      #     build_path: << parameters.build_path >>
 
   deploy:
     parameters:
