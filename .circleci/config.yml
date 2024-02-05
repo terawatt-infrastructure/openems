@@ -58,6 +58,8 @@ jobs:
       - run: |
           ./gradlew buildNeeded
           ./gradlew buildBackend
+          mkdir -p tools/docker/openems-backend/build
+          mv build/openems-backend.jar tools/docker/openems-backend/build
       - devops/build-image:
           build_args: "<< parameters.build_args >>"
           dockerfile_path: << parameters.dockerfile_path >>
