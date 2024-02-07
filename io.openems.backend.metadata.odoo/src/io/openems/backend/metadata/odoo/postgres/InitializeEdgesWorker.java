@@ -108,6 +108,8 @@ public class InitializeEdgesWorker {
 	 * @throws SQLException on error
 	 */
 	private PreparedStatement psQueryAllEdges(Connection connection) throws SQLException {
+		this.parent.logInfo(this.log, "psQueryAllEdges called");
+		this.parent.logInfo(this.log, connection.getMetaData().getURL());
 		return connection.prepareStatement(//
 				"SELECT " + Field.getSqlQueryFields(EdgeDevice.values()) //
 						+ " FROM " + EdgeDevice.ODOO_TABLE //
