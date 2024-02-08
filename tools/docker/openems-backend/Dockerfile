@@ -16,6 +16,8 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
     && apt-get -y install --no-install-recommends ./odoo.deb \
     && rm -rf /var/lib/apt/lists/* odoo.deb
 
+COPY odoo odoo
+
 RUN apt-get update && apt-get install -y openjdk-17-jdk openjdk-17-jre influxdb
 RUN update-alternatives --config java
 RUN update-alternatives --config javac
