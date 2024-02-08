@@ -151,8 +151,7 @@ public class MetadataOdoo extends AbstractMetadata implements AppCenterMetadata,
 		var hasMultipleEdges = false;
 		try {
 			hasMultipleEdges = JsonUtils.getAsBoolean(jUser, "has_multiple_edges");
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			this.logError(this.log, e.toString());
 		}
 
