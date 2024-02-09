@@ -60,12 +60,6 @@ jobs:
           ./gradlew buildBackend
           mkdir -p tools/docker/openems-backend/build
           mv build/openems-backend.jar tools/docker/openems-backend/build
-      - run: |
-          mkdir -p tools/docker/openems-backend/odoo/addons-available tools/docker/openems-backend/odoo/addons-enabled
-          cd tools/docker/openems-backend/odoo/addons-available
-          git clone --depth=1 -b 16.0 https://github.com/OCA/partner-contact
-          git clone --depth=1 -b 16.0 https://github.com/OCA/web.git
-          git clone --depth=1 -b 16.0 https://github.com/OpenEMS/odoo-openems.git
       - devops/build-image:
           build_args: "<< parameters.build_args >>"
           dockerfile_path: << parameters.dockerfile_path >>

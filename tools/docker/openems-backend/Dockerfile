@@ -16,7 +16,11 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
     && apt-get -y install --no-install-recommends ./odoo.deb \
     && rm -rf /var/lib/apt/lists/* odoo.deb
 
-COPY odoo odoo
+RUN mkdir -p odoo/addons-available odoo/addons-enabled \
+    && cd odoo/addons-available \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OCA/partner-contact \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OCA/web.git \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OpenEMS/odoo-openems.git
 
 RUN apt-get update && apt-get install -y openjdk-17-jdk openjdk-17-jre influxdb
 RUN update-alternatives --config java
