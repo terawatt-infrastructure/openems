@@ -9,7 +9,7 @@ RUN apt-get install -y --no-install-recommends software-properties-common curl g
 RUN curl -sL https://repos.influxdata.com/influxdb.key | apt-key add -
 # RUN add-apt-repository -y ppa:openjdk-r/ppa
 
-ENV ODOO_VERSION 15.0
+ENV ODOO_VERSION 16.0
 ENV ODOO_RELEASE latest
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
     && apt-get update \
