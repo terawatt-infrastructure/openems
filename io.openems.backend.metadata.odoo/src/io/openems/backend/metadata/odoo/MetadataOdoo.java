@@ -148,12 +148,7 @@ public class MetadataOdoo extends AbstractMetadata implements AppCenterMetadata,
 		var name = JsonUtils.getAsString(jUser, "name");
 		var language = Language.from(JsonUtils.getAsString(jUser, "language"));
 		var globalRole = Role.getRole(JsonUtils.getAsString(jUser, "global_role"));
-		var hasMultipleEdges = false;
-		try {
-			hasMultipleEdges = JsonUtils.getAsBoolean(jUser, "has_multiple_edges");
-		} catch (Exception e) {
-			this.logError(this.log, e.toString());
-		}
+		var	hasMultipleEdges = JsonUtils.getAsBoolean(jUser, "has_multiple_edges");
 
 		final var settings = JsonUtils.getAsOptionalString(jUser, "settings") //
 				.flatMap(JsonUtils::parseOptional) //
