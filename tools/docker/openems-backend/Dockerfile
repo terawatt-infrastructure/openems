@@ -1,4 +1,15 @@
-FROM ubuntu:latest
+ARG ODOO_VERSION=16.0
+
+FROM bitnami/git:latest as addons
+ARG ODOO_VERSION
+RUN mkdir -p odoo/addons-available odoo/addons-enabled \
+    && cd odoo/addons-available \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OCA/partner-contact \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OCA/web.git \
+    && git clone --depth=1 -b ${ODOO_VERSION} https://github.com/OpenEMS/odoo-openems.git
+
+FROM ubuntu:latest as build
+ARG ODOO_VERSION
 ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir -p /opt/openems-backend
 WORKDIR /opt/openems-backend
@@ -9,12 +20,13 @@ RUN apt-get install -y --no-install-recommends software-properties-common curl g
 RUN curl -sL https://repos.influxdata.com/influxdb.key | apt-key add -
 # RUN add-apt-repository -y ppa:openjdk-r/ppa
 
-ENV ODOO_VERSION 15.0
 ENV ODOO_RELEASE latest
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
     && apt-get update \
     && apt-get -y install --no-install-recommends ./odoo.deb \
     && rm -rf /var/lib/apt/lists/* odoo.deb
+
+COPY --from=addons /odoo odoo
 
 RUN apt-get update && apt-get install -y openjdk-17-jdk openjdk-17-jre influxdb
 RUN update-alternatives --config java
