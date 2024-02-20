@@ -10,11 +10,13 @@ To connect to influxDB:
 To connect to felix:
 - Run:  `kubectl -n openems  port-forward svc/openems-backend-felix 8079:8079`
 - Navigate to URL:  http://localhost:8079/system/console/configMgr
+- Default credentials are `admin`/`admin`
 
 ## Odoo
 To connect to Odoo:
 - Run:  `kubectl -n openems  port-forward svc/openems-backend-odoo 8069:8069`
 - Navigate to URL:  http://localhost:8069
+- Default credentials are `admin`/`admin`
 
 ## Automated Directory
 
