@@ -358,6 +358,7 @@ public class UtilsTest {
 				DELAY_DISCHARGE, postprocessSimulatorState(p, 0, 2001, 1, DELAY_DISCHARGE));
 		assertEquals("DELAY_DISCHARGE and would charge from PV in balancing", //
 				BALANCING, postprocessSimulatorState(p, -1000, 2001, -1000, DELAY_DISCHARGE));
+				
 		assertEquals("CHARGE_GRID actually from grid", //
 				CHARGE_GRID, postprocessSimulatorState(p, -1000, 0, 0, StateMachine.CHARGE_GRID));
 		assertEquals("CHARGE_GRID but fully supplied by excess PV", //
