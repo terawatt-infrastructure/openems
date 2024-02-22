@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/test/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuview2100Test.java
 package io.openems.edge.meter.accuenergy.acuview_2100;
+========
+package io.openems.edge.meter.accuenergy.acuRev2100;
+>>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/test/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAccuviewIITest.java
 
 import org.junit.Test;
 

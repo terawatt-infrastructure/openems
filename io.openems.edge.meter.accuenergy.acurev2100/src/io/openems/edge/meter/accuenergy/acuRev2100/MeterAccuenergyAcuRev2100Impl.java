@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuView2100Impl.java
 package io.openems.edge.meter.accuenergy.acuview_2100;
+========
+package io.openems.edge.meter.accuenergy.acuRev2100;
+>>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/src/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAcuRev2100Impl.java
 
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
@@ -31,7 +35,11 @@ import io.openems.edge.meter.api.MeterType;
 		immediate = true, //
 		configurationPolicy = ConfigurationPolicy.REQUIRE //
 )
+<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuView2100Impl.java
 public class MeterAccuenergyAcuView2100Impl extends AbstractOpenemsModbusComponent implements MeterAccuenergyAcuview2100, ModbusComponent, ElectricityMeter, OpenemsComponent {
+========
+public class MeterAccuenergyAcuRev2100Impl extends AbstractOpenemsModbusComponent implements MeterAccuenergyAcuRev2100, ElectricityMeter, ModbusComponent, OpenemsComponent {
+>>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/src/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAcuRev2100Impl.java
 
 	@Reference
 	private ConfigurationAdmin cm;
@@ -43,12 +51,20 @@ public class MeterAccuenergyAcuView2100Impl extends AbstractOpenemsModbusCompone
 
 	private Config config = null;
 
+<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuView2100Impl.java
 	public MeterAccuenergyAcuView2100Impl() {
+========
+	public MeterAccuenergyAcuRev2100Impl() {
+>>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/src/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAcuRev2100Impl.java
 		super(//
 				OpenemsComponent.ChannelId.values(), //
 				ModbusComponent.ChannelId.values(), //
+<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuView2100Impl.java
 				MeterAccuenergyAcuview2100.ChannelId.values(), 
 				ElectricityMeter.ChannelId.values() //
+========
+				MeterAccuenergyAcuRev2100.ChannelId.values() //
+>>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/src/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAcuRev2100Impl.java
 		);
 	}
 
