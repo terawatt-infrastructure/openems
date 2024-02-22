@@ -17,7 +17,7 @@ import io.openems.common.websocket.AbstractWebsocketServer.DebugMode;
 	int poolSize() default 10;
 
 	@AttributeDefinition(name = "Debug Mode", description = "Activates the debug mode")
-	DebugMode debugMode() default DebugMode.OFF;
+	DebugMode debugMode() default DebugMode.DETAILED;
 
 	String webconsole_configurationFactory_nameHint() default "Ui Websocket";
 
