@@ -18,6 +18,9 @@ To connect to Odoo:
 - Navigate to URL:  http://localhost:8080
 - Default credentials are `admin`/`admin`
 
+In Odoo, if you want to enable Developer Mode (which allows things like updating the Apps list):
+https://www.cybrosys.com/odoo/odoo-books/odoo-16-development/setup-development-environment/developer-mode
+
 ## Automated Directory
 
 - Summary: Fork of open-source repository OpenEMS for advanced load management

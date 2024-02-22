@@ -94,7 +94,6 @@ jobs:
           tag_values_path: "<< parameters.tag_values_path >>"
           pipeline_id: << pipeline.id >>
           pipeline_number: << pipeline.number >>
-          helm_branch: feature/tech-3106-add-full-odoo
 
 workflows:
   dev:
