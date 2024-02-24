@@ -1,3 +1,0 @@
-= io.openems.edge.meter.accuenergy.acuview_2100
-
-https://github.com/OpenEMS/openems/tree/develop/io.openems.edge.meter.accuenergy.acuview_2100[Source Code icon:github[]]

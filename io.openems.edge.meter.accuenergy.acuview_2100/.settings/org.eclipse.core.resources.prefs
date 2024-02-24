@@ -1,9 +1,0 @@
-eclipse.preferences.version=1
-encoding//src/io/openems/edge/meter/accuenergy/acuview_2100/Config.java=UTF-8
-encoding//src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuView2100Impl.java=UTF-8
-encoding//src/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuview2100.java=UTF-8
-encoding//test/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuview2100Test.java=UTF-8
-encoding//test/io/openems/edge/meter/accuenergy/acuview_2100/MyConfig.java=UTF-8
-encoding/<project>=UTF-8
-encoding/bnd.bnd=UTF-8
-encoding/readme.adoc=UTF-8

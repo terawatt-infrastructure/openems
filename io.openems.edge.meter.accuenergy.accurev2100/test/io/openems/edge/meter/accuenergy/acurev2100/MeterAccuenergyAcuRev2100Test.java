@@ -1,8 +1,4 @@
-<<<<<<<< Updated upstream:io.openems.edge.meter.accuenergy.acuview_2100/test/io/openems/edge/meter/accuenergy/acuview_2100/MeterAccuenergyAcuview2100Test.java
-package io.openems.edge.meter.accuenergy.acuview_2100;
-========
-package io.openems.edge.meter.accuenergy.acuRev2100;
->>>>>>>> Stashed changes:io.openems.edge.meter.accuenergy.acurev2100/test/io/openems/edge/meter/accuenergy/acuRev2100/MeterAccuenergyAccuviewIITest.java
+package io.openems.edge.meter.accuenergy.acurev2100;
 
 import org.junit.Test;
 
@@ -12,15 +8,14 @@ import io.openems.edge.common.test.ComponentTest;
 import io.openems.edge.common.test.DummyConfigurationAdmin;
 import io.openems.edge.meter.api.MeterType;
 
-public class MeterAccuenergyAcuview2100Test {
+public class MeterAccuenergyAcuRev2100Test {
 
-	
 	private static final String COMPONENT_ID = "component0";
 	private static final String MODBUS_ID = "modbus0";
 
 	@Test
 	public void test() throws Exception {
-		new ComponentTest(new MeterAccuenergyAcuView2100Impl()) //
+		new ComponentTest(new MeterAccuenergyAcuRev2100Impl()) //
 				.addReference("cm", new DummyConfigurationAdmin()) //
 				.addReference("setModbus", new DummyModbusBridge(MODBUS_ID)) //
 				.activate(MyConfig.create() //
