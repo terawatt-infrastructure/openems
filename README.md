@@ -21,6 +21,15 @@ To connect to Odoo:
 In Odoo, if you want to enable Developer Mode (which allows things like updating the Apps list):
 https://www.cybrosys.com/odoo/odoo-books/odoo-16-development/setup-development-environment/developer-mode
 
+## Edge Devices
+### Monitoring URL Endpoint
+There does not currently seem to be a place to configure the Odoo Edge Monitoring URL from the UI.
+
+To configure this, the current solution is:
+- Connect to the Postgres databasse
+- Edit the `ir_config_parameter` table data
+- Update the `edge_monitoring_url` to the UI's edge URL.  For example, `https://example.com/openems/device/`
+
 ## Automated Directory
 
 - Summary: Fork of open-source repository OpenEMS for advanced load management
