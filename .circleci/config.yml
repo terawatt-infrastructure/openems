@@ -3,13 +3,13 @@ version: 2.1
 dev: &dev
   filters:
     branches:
-      ignore: main
+      ignore: develop
   context: dev
 
 staging: &staging
   filters:
     branches:
-      only: main
+      only: develop
   context: staging
 
 prod: &prod
