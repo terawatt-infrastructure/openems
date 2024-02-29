@@ -1,5 +1,23 @@
 # OpenEMS - Terawatt
 
+## Setup
+Our OpenEMS deployment requires an AWS Secret `openems` to exist.  This is generated automatically via Terraform.
+
+It must be manually populated with the following:
+
+|Secret Key Name|Info|
+|---|---|
+|influxdb-password|Generate a secure password|
+|influxdb-token|Generate a secure password|
+|odoo-password|Generate a secure password|
+
+**NOTE**:  Do this _before_ any further deployments of the application.  These values help bootstrap persistent configuration.
+
+## UI
+When building the UI (as in the Dockerfile), environments are passed in.  As an example, `ng build --base-href "/openems/" -c "openems,openems-backend-prod-eks,prod"`
+
+These environments are defined in the [angular.json](./ui/angular.json) file, which have references to the theme file they represent.  This is the way that the websocket URLs are configured to point to the backend.
+
 ## InfluxDB
 To connect to influxDB:
 - Obtain the password from AWS SSM secret "openems"
