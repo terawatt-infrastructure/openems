@@ -1,6 +1,8 @@
 # OpenEMS - Terawatt
 
 ## Setup
+
+### Secrets
 Our OpenEMS deployment requires an AWS Secret `openems` to exist.  This is generated automatically via Terraform.
 
 It must be manually populated with the following:
@@ -12,6 +14,15 @@ It must be manually populated with the following:
 |odoo-password|Generate a secure password|
 
 **NOTE**:  Do this _before_ any further deployments of the application.  These values help bootstrap persistent configuration.
+
+### Odoo
+Upon first installation of Odoo (See below for connecting to Odoo), you must active the OpenEMS Addon.
+
+To do this:
+- Log in to Odoo
+- Go to the `Apps` page
+- Locate `OpenEMS`
+- Click `Activate`
 
 ## UI
 When building the UI (as in the Dockerfile), environments are passed in.  As an example, `ng build --base-href "/openems/" -c "openems,openems-backend-prod-eks,prod"`
