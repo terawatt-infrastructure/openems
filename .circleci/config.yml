@@ -160,3 +160,35 @@ workflows:
           tag_values_path: .ui.image.tag
           image_repo: openems
           environment: staging
+  prod:
+    <<: *not_scheduled
+    jobs:
+      - build-image:
+          <<: *prod
+          name: build-image-backend
+          image_repo: ems-backend
+          dockerfile_path: tools/docker/openems-backend/Dockerfile
+          build_path: tools/docker/openems-backend
+      - deploy:
+          requires:
+            - build-image-backend
+          <<: *prod
+          name: deploy-backend
+          application: openems
+          tag_values_path: .backend.image.tag
+          image_repo: openems
+          environment: production
+      - build-image:
+          <<: *prod
+          name: build-image-frontend
+          image_repo: ems-ui
+          dockerfile_path: tools/docker/openems-ui/Dockerfile
+      - deploy:
+          requires:
+            - build-image-frontend
+          <<: *prod
+          name: deploy-frontend
+          application: openems
+          tag_values_path: .ui.image.tag
+          image_repo: openems
+          environment: production
