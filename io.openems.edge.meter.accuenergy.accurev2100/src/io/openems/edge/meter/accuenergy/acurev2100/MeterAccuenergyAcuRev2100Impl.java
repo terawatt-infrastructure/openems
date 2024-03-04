@@ -26,7 +26,7 @@ import io.openems.edge.meter.api.MeterType;
 
 @Designate(ocd = Config.class, factory = true)
 @Component(//
-        name = "Meter.Accuenergy.Acuview_2100", //
+        name = "Meter.Accuenergy.AcuRev_2100", //
         immediate = true, //
         configurationPolicy = ConfigurationPolicy.REQUIRE //
 )
@@ -68,21 +68,18 @@ public class MeterAccuenergyAcuRev2100Impl extends AbstractOpenemsModbusComponen
     @Override
     protected ModbusProtocol defineModbusProtocol() throws OpenemsException {
         // TODO implement ModbusProtocol
-        return new ModbusProtocol(this, //
-                new FC3ReadRegistersTask(0x2104, Priority.HIGH,
-                        m(ElectricityMeter.ChannelId.REACTIVE_POWER, new SignedWordElement(0x2104))),
-                new FC3ReadRegistersTask(0x2100, Priority.HIGH,
-                        m(ElectricityMeter.ChannelId.CURRENT, new SignedWordElement(0x2100))),
+        var modBus = new ModbusProtocol(this,
                 new FC3ReadRegistersTask(0x2010, Priority.HIGH,
                         m(ElectricityMeter.ChannelId.VOLTAGE, new SignedWordElement(0x2010)))
 
 
         );
+        return modBus; 
     }
 
     @Override
     public String debugLog() {
-        return "L:" + this.getReactivePower().asString();
+        return "V:" + this.getVoltage().asString();
     }
 
     @Override
