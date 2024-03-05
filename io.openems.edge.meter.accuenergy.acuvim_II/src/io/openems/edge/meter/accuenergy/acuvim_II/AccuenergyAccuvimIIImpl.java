@@ -78,20 +78,33 @@ public class AccuenergyAccuvimIIImpl extends AbstractOpenemsModbusComponent impl
 						m(ElectricityMeter.ChannelId.VOLTAGE_L2, new FloatDoublewordElement(16388))),
 				new FC3ReadRegistersTask(16390, Priority.HIGH,
 						m(ElectricityMeter.ChannelId.VOLTAGE_L3, new FloatDoublewordElement(16390))),
-				new FC3ReadRegistersTask(17922, Priority.HIGH,
-						m(ElectricityMeter.ChannelId.CURRENT_L2, new FloatDoublewordElement(17922))),
 				new FC3ReadRegistersTask(17920, Priority.HIGH,
 						m(ElectricityMeter.ChannelId.CURRENT_L1, new FloatDoublewordElement(17920))),
+				new FC3ReadRegistersTask(17922, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.CURRENT_L2, new FloatDoublewordElement(17922))),
 				new FC3ReadRegistersTask(17924, Priority.HIGH,
 						m(ElectricityMeter.ChannelId.CURRENT_L3, new FloatDoublewordElement(17924))),
-				new FC3ReadRegistersTask(16452, Priority.HIGH,
-						m(ElectricityMeter.ChannelId.REACTIVE_POWER, new FloatDoublewordElement(16452)))
+				new FC3ReadRegistersTask(16408, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.CURRENT, new FloatDoublewordElement(16408))),
+				new FC3ReadRegistersTask(16412, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.ACTIVE_POWER_L1, new FloatDoublewordElement(16412))),
+				new FC3ReadRegistersTask(16414, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.ACTIVE_POWER_L2, new FloatDoublewordElement(16414))),
+				new FC3ReadRegistersTask(16416, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.ACTIVE_POWER_L3, new FloatDoublewordElement(16416))),
+				new FC3ReadRegistersTask(16418, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.ACTIVE_POWER, new FloatDoublewordElement(16418))),
+				new FC3ReadRegistersTask(16426, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.REACTIVE_POWER, new FloatDoublewordElement(16426))),
+				new FC3ReadRegistersTask(16384, Priority.HIGH,
+						m(ElectricityMeter.ChannelId.FREQUENCY, new FloatDoublewordElement(16384)))
+				
 				);
 	}
 
 	@Override
 	public String debugLog() {
-		return "L:" + this.getCurrentL1().asString();
+		return "Active Power L:" + this.getActivePower().asString();
 	}
 
 	@Override

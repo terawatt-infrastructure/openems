@@ -11,7 +11,7 @@ import io.openems.edge.meter.api.MeterType;
 @interface Config {
 
 	@AttributeDefinition(name = "Component-ID", description = "Unique ID of this Component")
-	String id() default "io.openems.edge.meter.accuenergy.acuvim_II0";
+	String id() default "acuvimII0";
 	
 	@AttributeDefinition(name = "Meter-Type", description = "Grid, Production (=default), Consumption")
 	MeterType type() default MeterType.PRODUCTION;
