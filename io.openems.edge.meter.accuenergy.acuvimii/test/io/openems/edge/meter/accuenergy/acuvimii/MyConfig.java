@@ -1,7 +1,7 @@
-package io.openems.edge.meter.accuenergy.acuvim_ii;
+package io.openems.edge.meter.accuenergy.acuvimii;
 
 import io.openems.common.utils.ConfigUtils;
-import io.openems.edge.meter.accuenergy.acuvim_ii.Config;
+import io.openems.edge.meter.accuenergy.acuvimii.Config;
 import io.openems.edge.meter.api.MeterType;
 import io.openems.common.test.AbstractComponentConfig;
 

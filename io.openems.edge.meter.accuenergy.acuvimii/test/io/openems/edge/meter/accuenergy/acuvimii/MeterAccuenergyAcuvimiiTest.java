@@ -1,4 +1,4 @@
-package io.openems.edge.meter.accuenergy.acuvim_ii;
+package io.openems.edge.meter.accuenergy.acuvimii;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import io.openems.edge.common.test.AbstractComponentTest.TestCase;
 import io.openems.edge.bridge.modbus.test.DummyModbusBridge;
 import io.openems.edge.common.test.ComponentTest;
 import io.openems.edge.common.test.DummyConfigurationAdmin;
-import io.openems.edge.meter.accuenergy.acuvim_ii.AccuenergyAccuvimiiImpl;
+import io.openems.edge.meter.accuenergy.acuvimii.AccuenergyAccuvimiiImpl;
 import io.openems.edge.meter.api.MeterType;
 
 public class MeterAccuenergyAcuvimiiTest {

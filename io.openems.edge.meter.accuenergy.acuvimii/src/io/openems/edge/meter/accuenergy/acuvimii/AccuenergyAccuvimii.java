@@ -1,4 +1,4 @@
-package io.openems.edge.meter.accuenergy.acuvim_ii;
+package io.openems.edge.meter.accuenergy.acuvimii;
 
 import org.osgi.service.event.EventHandler;
 

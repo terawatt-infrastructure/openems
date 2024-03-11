@@ -1,3 +1,0 @@
-= io.openems.edge.meter.accuenergy.acuvim_ii
-
-https://github.com/OpenEMS/openems/tree/develop/io.openems.edge.meter.accuenergy.acuvim_ii[Source Code icon:github[]]
