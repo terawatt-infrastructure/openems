@@ -1,4 +1,4 @@
-package io.openems.edge.meter.accuenergy.acuvim_II;
+package io.openems.edge.meter.accuenergy.acuvim_ii;
 
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
