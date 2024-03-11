@@ -9,7 +9,7 @@ import io.openems.edge.common.test.DummyConfigurationAdmin;
 import io.openems.edge.meter.accuenergy.acuvim_ii.AccuenergyAccuvimiiImpl;
 import io.openems.edge.meter.api.MeterType;
 
-public class MeterAccuenergyAcuvimIITest {
+public class MeterAccuenergyAcuvimiiTest {
 
 	private static final String COMPONENT_ID = "component0";
 	private static final String MODBUS_ID = "modbus0";
