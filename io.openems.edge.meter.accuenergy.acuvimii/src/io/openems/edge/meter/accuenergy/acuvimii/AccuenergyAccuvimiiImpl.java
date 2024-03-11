@@ -31,7 +31,8 @@ import io.openems.edge.meter.api.MeterType;
 		immediate = true, //
 		configurationPolicy = ConfigurationPolicy.REQUIRE //
 )
-public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent implements AccuenergyAccuvimii,  ElectricityMeter, ModbusComponent, OpenemsComponent {
+public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent
+		implements AccuenergyAccuvimii, ElectricityMeter, ModbusComponent, OpenemsComponent {
 
 	@Reference
 	private ConfigurationAdmin cm;
@@ -54,10 +55,12 @@ public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent impl
 
 	@Activate
 	private void activate(ComponentContext context, Config config) throws OpenemsException {
-		if(super.activate(context, config.id(), config.alias(), config.enabled(), config.modbusUnitId(), this.cm, "Modbus",
-				config.modbus_id())) {
+
+		if (super.activate(context, config.id(), config.alias(), config.enabled(), config.modbusUnitId(), this.cm,
+				"Modbus", config.modbus_id())) {
 			return;
 		}
+		
 		this.config = config;
 	}
 
@@ -69,9 +72,9 @@ public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent impl
 
 	@Override
 	protected ModbusProtocol defineModbusProtocol() throws OpenemsException {
-		
+
 		return new ModbusProtocol(this, //
-				
+
 				new FC3ReadRegistersTask(16386, Priority.HIGH,
 						m(ElectricityMeter.ChannelId.VOLTAGE_L1, new FloatDoublewordElement(16386))),
 				new FC3ReadRegistersTask(16388, Priority.HIGH,
@@ -98,8 +101,8 @@ public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent impl
 						m(ElectricityMeter.ChannelId.REACTIVE_POWER, new FloatDoublewordElement(16426))),
 				new FC3ReadRegistersTask(16384, Priority.HIGH,
 						m(ElectricityMeter.ChannelId.FREQUENCY, new FloatDoublewordElement(16384)))
-				
-				);
+
+		);
 	}
 
 	@Override
