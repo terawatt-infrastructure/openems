@@ -1,4 +1,4 @@
-package io.openems.edge.meter.accuenergy.acuvim_II;
+package io.openems.edge.meter.accuenergy.acuvim_ii;
 
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
@@ -31,7 +31,7 @@ import io.openems.edge.meter.api.MeterType;
 		immediate = true, //
 		configurationPolicy = ConfigurationPolicy.REQUIRE //
 )
-public class AccuenergyAccuvimIIImpl extends AbstractOpenemsModbusComponent implements AccuenergyAccuvimII,  ElectricityMeter, ModbusComponent, OpenemsComponent {
+public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent implements AccuenergyAccuvimii,  ElectricityMeter, ModbusComponent, OpenemsComponent {
 
 	@Reference
 	private ConfigurationAdmin cm;
@@ -43,12 +43,12 @@ public class AccuenergyAccuvimIIImpl extends AbstractOpenemsModbusComponent impl
 
 	private Config config = null;
 
-	public AccuenergyAccuvimIIImpl() {
+	public AccuenergyAccuvimiiImpl() {
 		super(//
 				OpenemsComponent.ChannelId.values(), //
 				ElectricityMeter.ChannelId.values(), //
 				ModbusComponent.ChannelId.values(), //
-				AccuenergyAccuvimII.ChannelId.values() //
+				AccuenergyAccuvimii.ChannelId.values() //
 		);
 	}
 

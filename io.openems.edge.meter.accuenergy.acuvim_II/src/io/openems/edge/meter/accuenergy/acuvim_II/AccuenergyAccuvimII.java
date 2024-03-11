@@ -1,11 +1,11 @@
-package io.openems.edge.meter.accuenergy.acuvim_II;
+package io.openems.edge.meter.accuenergy.acuvim_ii;
 
 import org.osgi.service.event.EventHandler;
 
 import io.openems.edge.common.channel.Doc;
 import io.openems.edge.common.component.OpenemsComponent;
 
-public interface AccuenergyAccuvimII extends OpenemsComponent {
+public interface AccuenergyAccuvimii extends OpenemsComponent {
 
 	public enum ChannelId implements io.openems.edge.common.channel.ChannelId {
 		;
