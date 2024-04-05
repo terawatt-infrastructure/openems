@@ -60,7 +60,7 @@ public class AccuenergyAccuvimiiImpl extends AbstractOpenemsModbusComponent
 				"Modbus", config.modbus_id())) {
 			return;
 		}
-		
+
 		this.config = config;
 	}
 
